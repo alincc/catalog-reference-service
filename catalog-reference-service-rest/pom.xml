@@ -83,6 +83,11 @@
             <artifactId>catalog-reference-service-model</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>no.nb.microservices</groupId>
+            <artifactId>catalog-metadata-model</artifactId>
+            <version>0.0.1-cc221af5214dd323e8b5b6b138d33cf89c0b4698-88</version>
+        </dependency>
 
         <!-- Testing -->
         <dependency>

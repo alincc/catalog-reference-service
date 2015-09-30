@@ -12,6 +12,9 @@ endpoints:
 server:
   port: 8080
 
+catalog-reference-service:
+  urnbase: http://urn.nb.no/
+
 spring:  
 
 eureka:

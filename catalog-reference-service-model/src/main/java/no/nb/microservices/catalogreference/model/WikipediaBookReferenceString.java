@@ -9,7 +9,7 @@ public class WikipediaBookReferenceString implements ReferenceString {
 
         boolean dateIssued = false;
         for (ReferenceData referenceData : reference.getData()) {
-            if (referenceData.getTag().equalsIgnoreCase("utgivelsesår")) {
+            if ("utgivelsesår".equalsIgnoreCase(referenceData.getTag())) {
                 dateIssued = true;
             }
             stringBuilder.append(" | ");

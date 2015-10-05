@@ -7,9 +7,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class ReferenceFactory {
-    public final static String WIKIPEDIA_FILM = "wikifilm";
-    public final static String WIKIPEDIA_BOOK = "wikibook";
-    public final static String RIS = "ris";
+    public static final String WIKIPEDIA_FILM = "wikifilm";
+    public static final String WIKIPEDIA_BOOK = "wikibook";
+    public static final String RIS = "ris";
     public final ApplicationSettings settings;
 
     @Autowired

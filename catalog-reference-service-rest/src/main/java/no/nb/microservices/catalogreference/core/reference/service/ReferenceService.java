@@ -38,7 +38,7 @@ public class ReferenceService implements IReferenceService {
         ItemResource item = catalogItemRepository.getItem(id);
         List<String> mediaTypes = item.getMetadata().getMediaTypes();
         for (String mediaType : mediaTypes) {
-            if (mediaType.equalsIgnoreCase("film")) {
+            if ("film".equalsIgnoreCase(mediaType)) {
                 IReference reference = referenceFactory.createReference(ReferenceFactory.WIKIPEDIA_FILM, mods, urn);
                 return reference.createReference();
             } else {

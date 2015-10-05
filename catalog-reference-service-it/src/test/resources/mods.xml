@@ -1,0 +1,293 @@
+<mods xmlns="http://www.loc.gov/mods/v3" xmlns:nbmodsext="http://www.nb.no/NBModsExtension/v1">
+	<titleInfo>
+		<title>Ringenes herre</title>
+	</titleInfo>
+	<titleInfo displayLabel="Originaltittel" type="alternative">
+		<title>The lord of the rings</title>
+	</titleInfo>
+	<titleInfo type="alternative">
+		<title>Ringens broskap</title>
+	</titleInfo>
+	<titleInfo type="alternative">
+		<title>To tårn</title>
+	</titleInfo>
+	<titleInfo type="alternative">
+		<title>Atter en konge</title>
+	</titleInfo>
+	<titleInfo type="alternative">
+		<title>Ringens brorskap</title>
+	</titleInfo>
+	<name type="personal">
+		<namePart>Tolkien, J.R.R.</namePart>
+		<role>
+			<roleTerm authority="marcrelator" type="text">creator</roleTerm>
+		</role>
+	</name>
+	<name type="personal">
+		<namePart>Lee, Alan</namePart>
+		<role>
+			<roleTerm authority="marcrelator" type="code">bjd</roleTerm>
+		</role>
+	</name>
+	<name type="personal">
+		<namePart>Høverstad, Torstein Bugge</namePart>
+		<namePart type="date">1944-</namePart>
+		<role>
+			<roleTerm authority="marcrelator" type="code">trl</roleTerm>
+		</role>
+	</name>
+	<typeOfResource>text</typeOfResource>
+	<originInfo>
+		<place>
+			<placeTerm authority="iso3166" type="code">no</placeTerm>
+		</place>
+		<place>
+			<placeTerm type="text">[Oslo]</placeTerm>
+		</place>
+		<publisher>Tiden</publisher>
+		<dateIssued>1992</dateIssued>
+		<edition>4. utg.</edition>
+		<issuance>monographic</issuance>
+	</originInfo>
+	<language>
+		<languageTerm authority="iso639-2b" type="code">nob</languageTerm>
+	</language>
+	<language objectPart="translation">
+		<languageTerm authority="iso639-2b" type="code">eng</languageTerm>
+	</language>
+	<physicalDescription>
+		<form authority="marcform">print</form>
+		<extent>1063 s. kart</extent>
+	</physicalDescription>
+	<tableOfContents>Ringens brorskap ; To tårn ; Atter en konge</tableOfContents>
+	<targetAudience authority="marctarget">juvenile</targetAudience>
+	<note type="statement of responsibility">
+		av J.R.R. Tolkien ; til norsk ved Torstein Bugge Høverstad
+	</note>
+	<note>Tolkien jubileumsutgave 1892-1992</note>
+	<note>
+		Opplagshistorikk: 4. utg., 2. oppl. 1993; 3. oppl. 1994; 4. oppl. 1995; 5. oppl. 1996;
+		6. oppl. 1997
+	</note>
+	<subject>
+		<topic>fantastisk</topic>
+	</subject>
+	<subject>
+		<topic>fortelling</topic>
+	</subject>
+	<subject>
+		<topic>roman</topic>
+	</subject>
+	<subject>
+		<topic>fantasi</topic>
+	</subject>
+	<subject>
+		<topic>eventyr</topic>
+	</subject>
+	<classification authority="ddc" edition="4/nor">823[S]</classification>
+	<classification authority="ddc">820</classification>
+	<classification authority="udc">820</classification>
+	<relatedItem type="otherFormat">
+		<identifier type="local">(NO-TrBIB)100561446</identifier>
+	</relatedItem>
+	<identifier type="isbn">8210035789</identifier>
+	<location>
+		<physicalLocation authority="isil">NO-0030100</physicalLocation>
+		<holdingSimple>
+			<copyInformation>
+				<note>(ib.) (2. oppl. 1993) Ikke til hjemlån</note>
+			</copyInformation>
+		</holdingSimple>
+	</location>
+	<location>
+		<physicalLocation authority="isil">NO-[NULL]</physicalLocation>
+		<holdingSimple>
+			<copyInformation />
+		</holdingSimple>
+	</location>
+	<location>
+		<physicalLocation authority="isil">NO-0030100</physicalLocation>
+		<holdingSimple>
+			<copyInformation>
+				<note>(ib.) (4. oppl. 1995) Til bruk på NB Oslos lesesal</note>
+			</copyInformation>
+		</holdingSimple>
+	</location>
+	<location>
+		<physicalLocation authority="isil">NO-0030100</physicalLocation>
+		<holdingSimple>
+			<copyInformation>
+				<note>(ib.) Ikke til hjemlån</note>
+			</copyInformation>
+		</holdingSimple>
+	</location>
+	<location>
+		<physicalLocation authority="isil">NO-0030100</physicalLocation>
+		<holdingSimple>
+			<copyInformation>
+				<note>(ib.) (3. oppl. 1994) Ikke til hjemlån</note>
+			</copyInformation>
+		</holdingSimple>
+	</location>
+	<location>
+		<physicalLocation authority="isil">NO-NB/BEV</physicalLocation>
+		<holdingSimple>
+			<copyInformation>
+				<note>(2. oppl. 1993) (Sikringseksemplar.)</note>
+			</copyInformation>
+		</holdingSimple>
+	</location>
+	<location>
+		<physicalLocation authority="isil">NO-[NULL]</physicalLocation>
+		<holdingSimple>
+			<copyInformation />
+		</holdingSimple>
+	</location>
+	<location>
+		<physicalLocation authority="isil">NO-NB/BEV</physicalLocation>
+		<holdingSimple>
+			<copyInformation>
+				<note>(Sikringseksemplar.)</note>
+			</copyInformation>
+		</holdingSimple>
+	</location>
+	<location>
+		<physicalLocation authority="isil">NO-NB/BEV</physicalLocation>
+		<holdingSimple>
+			<copyInformation>
+				<note>(4. oppl. 1995) (Sikringseksemplar.)</note>
+			</copyInformation>
+		</holdingSimple>
+	</location>
+	<location>
+		<physicalLocation authority="isil">NO-0183300</physicalLocation>
+		<holdingSimple>
+			<copyInformation>
+				<note>(6. oppl. 1997)</note>
+			</copyInformation>
+		</holdingSimple>
+	</location>
+	<location>
+		<physicalLocation authority="isil">NO-NB/BEV</physicalLocation>
+		<holdingSimple>
+			<copyInformation>
+				<note>(5. oppl. 1996) (Sikringseksemplar.)</note>
+			</copyInformation>
+		</holdingSimple>
+	</location>
+	<location>
+		<physicalLocation authority="isil">NO-0030100</physicalLocation>
+		<holdingSimple>
+			<copyInformation>
+				<note>(ib.) (5. oppl. 1996) Til bruk på NB Oslos lesesal</note>
+			</copyInformation>
+		</holdingSimple>
+	</location>
+	<location>
+		<physicalLocation authority="isil">NO-1080701</physicalLocation>
+		<holdingSimple>
+			<copyInformation>
+				<sublocation>Skj</sublocation>
+			</copyInformation>
+		</holdingSimple>
+	</location>
+	<location>
+		<physicalLocation authority="isil">NO-1010601</physicalLocation>
+		<holdingSimple>
+			<copyInformation>
+				<note>(Ikke fjernlån)</note>
+			</copyInformation>
+		</holdingSimple>
+	</location>
+	<location>
+		<physicalLocation authority="isil">NO-1171801</physicalLocation>
+		<holdingSimple>
+			<copyInformation />
+		</holdingSimple>
+	</location>
+	<location>
+		<physicalLocation authority="isil">NO-1190201</physicalLocation>
+		<holdingSimple>
+			<copyInformation>
+				<note>(Opptrykk 1997)</note>
+			</copyInformation>
+		</holdingSimple>
+	</location>
+	<location>
+		<physicalLocation authority="isil">NO-0030100</physicalLocation>
+		<holdingSimple>
+			<copyInformation>
+				<note>
+					(ib.) (6. oppl. 1997) (Til bruk på NB Oslos lesesal)
+				</note>
+			</copyInformation>
+		</holdingSimple>
+	</location>
+	<location>
+		<physicalLocation authority="isil">NO-1182801</physicalLocation>
+		<holdingSimple>
+			<copyInformation />
+		</holdingSimple>
+	</location>
+	<location>
+		<physicalLocation authority="isil">NO-1120115</physicalLocation>
+		<holdingSimple>
+			<copyInformation />
+		</holdingSimple>
+	</location>
+	<location>
+		<physicalLocation authority="isil">NO-1030341</physicalLocation>
+		<holdingSimple>
+			<copyInformation />
+		</holdingSimple>
+	</location>
+	<location>
+		<physicalLocation authority="isil">NO-0183300</physicalLocation>
+		<holdingSimple>
+			<copyInformation />
+		</holdingSimple>
+	</location>
+	<location>
+		<physicalLocation authority="isil">NO-NB/BEV</physicalLocation>
+		<holdingSimple>
+			<copyInformation>
+				<note>(3. oppl. 1994) (Sikringseksemplar.)</note>
+			</copyInformation>
+		</holdingSimple>
+	</location>
+	<location>
+		<physicalLocation authority="isil">NO-1160133</physicalLocation>
+		<holdingSimple>
+			<copyInformation>
+				<sublocation>mag B</sublocation>
+			</copyInformation>
+		</holdingSimple>
+	</location>
+	<location>
+		<physicalLocation authority="isil">NO-1030053</physicalLocation>
+		<holdingSimple>
+			<copyInformation>
+				<sublocation>Barnebøker</sublocation>
+			</copyInformation>
+		</holdingSimple>
+	</location>
+	<location>
+		<physicalLocation authority="isil">NO-1030053</physicalLocation>
+		<holdingSimple>
+			<copyInformation>
+				<sublocation>Barnebøker</sublocation>
+			</copyInformation>
+		</holdingSimple>
+	</location>
+	<recordInfo>
+		<recordContentSource authority="marcorg">NO-OsNB</recordContentSource>
+		<recordCreationDate encoding="marc">110826</recordCreationDate>
+		<recordChangeDate encoding="iso8601">20110826164236.0</recordChangeDate>
+		<recordIdentifier source="NO-TrBIB">92166141x</recordIdentifier>
+		<languageOfCataloging>
+			<languageTerm authority="iso639-2b" type="code">nob</languageTerm>
+		</languageOfCataloging>
+	</recordInfo>
+	<identifier type="sesamid">508e84edfd13adc9a2b4275c16dea59a</identifier>
+	<identifier type="oaiid">oai:bibsys.no:biblio:92166141x</identifier>
+</mods>

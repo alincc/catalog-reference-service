@@ -13,6 +13,6 @@ public interface CatalogMetadataRepository {
     @RequestMapping(value = "/catalog/metadata/{id}/mods", method = RequestMethod.GET, produces = MediaType.APPLICATION_XML_VALUE)
     Mods getMods(@PathVariable("id") String id);
 
-    @RequestMapping(value = "/catalog/metadata/{id}/fields", method = RequestMethod.GET, produces = MediaType.APPLICATION_XML_VALUE)
+    @RequestMapping(value = "/catalog/metadata/{id}/fields", method = RequestMethod.GET)
     FieldResource getFields(@PathVariable("id") String id);
 }

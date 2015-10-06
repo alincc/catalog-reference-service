@@ -3,6 +3,7 @@ package no.nb.microservices.catalogreference.util;
 import no.nb.microservices.catalogmetadata.model.mods.v3.*;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -136,31 +137,51 @@ public class ModsExtractor {
     }
 
     public String extractTypeOfResource() {
-        String type = "GEN";
+        String result = "GEN";
         String typeOfResource = mods.getTypeOfResource();
         if(typeOfResource != null && !typeOfResource.isEmpty()) {
-            if("monographic".equalsIgnoreCase(typeOfResource)){
-                type = "BOOK";
-            } else if("cartographic".equalsIgnoreCase(typeOfResource)){
-                type = "MAP";
-            } else if("text".equalsIgnoreCase(typeOfResource)){
-                type = "BOOK";
-            } else if("sound recording-musical".equalsIgnoreCase(typeOfResource)){
-                type = "BOOK"; // TODO
-            } else if ("sound recording".equalsIgnoreCase(typeOfResource)){
-                type = "SOUND";
-            } else if ("moving image".equalsIgnoreCase(typeOfResource)){
-                type = "VIDEO";
-            }
+            result = checkBookType(typeOfResource,result);
+            result = checkMapType(typeOfResource,result);
+            result = checkVideoType(typeOfResource,result);
+            result = checkSoundType(typeOfResource,result);
         } else {
             String issuance = mods.getOriginInfo().getIssuance();
-            if ("monographic".equalsIgnoreCase(issuance)) {
-                type = "BOOK";
-            } else if ("cartographic".equalsIgnoreCase(issuance)) {
-                type = "MAP";
-            }
+            result = checkBookType(issuance,result);
+            result = checkMapType(issuance,result);
         }
-        return type;
+        return result;
+    }
+
+    private String checkBookType(String type, String check) {
+        List<String> book = Arrays.asList("monographic", "text");
+        if (book.contains(type.toLowerCase())) {
+            return "BOOK";
+        }
+        return check;
+    }
+
+    private String checkMapType(String type, String check) {
+        List<String> map = Arrays.asList("cartographic");
+        if (map.contains(type.toLowerCase())) {
+            return "MAP";
+        }
+        return check;
+    }
+
+    private String checkVideoType(String type, String check) {
+        List<String> video = Arrays.asList("moving image");
+        if (video.contains(type.toLowerCase())) {
+            return "VIDEO";
+        }
+        return check;
+    }
+
+    private String checkSoundType(String type, String check) {
+        List<String> sound = Arrays.asList("sound recording");
+        if (sound.contains(type.toLowerCase())) {
+            return "SOUND";
+        }
+        return check;
     }
 
     public List<String> extractNotes() {

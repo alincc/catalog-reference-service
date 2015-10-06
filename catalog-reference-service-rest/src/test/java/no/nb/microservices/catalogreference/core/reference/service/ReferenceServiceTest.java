@@ -35,7 +35,8 @@ public class ReferenceServiceTest {
 
     private ReferenceFactory referenceFactory;
     private IReferenceService referenceService;
-    private Mods mods;
+    private Mods modsBook;
+    private Mods modsFilm;
 
     @Before
     public void setup() throws Exception {
@@ -44,14 +45,16 @@ public class ReferenceServiceTest {
         referenceFactory = new ReferenceFactory(settings);
         referenceService = new ReferenceService(catalogMetadataRepository,catalogItemRepository, referenceFactory);
 
-        File xmlFile = new File(Paths.get(getClass().getResource("/mods3.xml").toURI()).toString());
+        File xmlbook = new File(Paths.get(getClass().getResource("/mods3.xml").toURI()).toString());
+        File xmlfilm = new File(Paths.get(getClass().getResource("/mods9.xml").toURI()).toString());
         JAXBContext context = JAXBContext.newInstance(Mods.class);
         Unmarshaller u = context.createUnmarshaller();
-        mods = (Mods) u.unmarshal(xmlFile);
+        modsBook = (Mods) u.unmarshal(xmlbook);
+        modsFilm = (Mods) u.unmarshal(xmlfilm);
     }
 
     @Test
-    public void testGetWikipediaReference() throws Exception {
+    public void testGetWikipediaBookReference() throws Exception {
         Metadata metadata = new Metadata();
         metadata.setMediaTypes(Arrays.asList("Bøker"));
         FieldResource fields = new FieldResource();
@@ -62,7 +65,7 @@ public class ReferenceServiceTest {
 
         when(catalogItemRepository.getItem("508e84edfd13adc9a2b4275c16dea59a")).thenReturn(itemResource);
         when(catalogMetadataRepository.getFields("508e84edfd13adc9a2b4275c16dea59a")).thenReturn(fields);
-        when(catalogMetadataRepository.getMods("508e84edfd13adc9a2b4275c16dea59a")).thenReturn(mods);
+        when(catalogMetadataRepository.getMods("508e84edfd13adc9a2b4275c16dea59a")).thenReturn(modsBook);
 
         Reference wikipediaReference = referenceService.getWikipediaReference("508e84edfd13adc9a2b4275c16dea59a");
         assertNotNull(wikipediaReference);
@@ -70,8 +73,25 @@ public class ReferenceServiceTest {
     }
 
     @Test
+    public void testGetWikipediaFilmReference() throws Exception {
+        Metadata metadata = new Metadata();
+        metadata.setMediaTypes(Arrays.asList("Film"));
+        FieldResource fields = new FieldResource();
+        fields.setUrns(Arrays.asList("URN:NBN:no-nb_video_5882"));
+        ItemResource itemResource = new ItemResource();
+        itemResource.setMetadata(metadata);
+
+        when(catalogItemRepository.getItem("8186575e69b7d331bc4b7b92d9b504f6")).thenReturn(itemResource);
+        when(catalogMetadataRepository.getFields("8186575e69b7d331bc4b7b92d9b504f6")).thenReturn(fields);
+        when(catalogMetadataRepository.getMods("8186575e69b7d331bc4b7b92d9b504f6")).thenReturn(modsFilm);
+
+        Reference wikipediaReference = referenceService.getWikipediaReference("8186575e69b7d331bc4b7b92d9b504f6");
+        assertNotNull(wikipediaReference);
+    }
+
+    @Test
     public void testGetRISReference() throws Exception {
-        when(catalogMetadataRepository.getMods("508e84edfd13adc9a2b4275c16dea59a")).thenReturn(mods);
+        when(catalogMetadataRepository.getMods("508e84edfd13adc9a2b4275c16dea59a")).thenReturn(modsBook);
         when(catalogMetadataRepository.getFields("508e84edfd13adc9a2b4275c16dea59a")).thenReturn(new FieldResource());
 
         Reference risReference = referenceService.getRISReference("508e84edfd13adc9a2b4275c16dea59a");

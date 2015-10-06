@@ -11,6 +11,7 @@ import java.io.File;
 import java.nio.file.Paths;
 import java.util.List;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class ModsExtractorTest {
@@ -32,9 +33,23 @@ public class ModsExtractorTest {
     }
 
     @Test
+    public void whenNoCreatorsFoundResultShouldBeEmpty() {
+        ModsExtractor extractor = new ModsExtractor(new Mods());
+        List<String> creators = extractor.extractCreators();
+        assertTrue(creators.isEmpty());
+    }
+
+    @Test
     public void whenPersonsIsFoundResultShouldBeNotEmpty() {
         List<String> persons = modsExtractor.extractPersons();
         assertTrue("Persons list should not be empty",!persons.isEmpty());
+    }
+
+    @Test
+    public void whenNoPersonsFoundResultShouldBeEmpty() {
+        ModsExtractor extractor = new ModsExtractor(new Mods());
+        List<String> persons = extractor.extractPersons();
+        assertTrue(persons.isEmpty());
     }
 
     @Test
@@ -44,9 +59,23 @@ public class ModsExtractorTest {
     }
 
     @Test
+    public void whenDateIssuedIsNotFoundResultShouldBeEmpty() {
+        ModsExtractor extractor = new ModsExtractor(new Mods());
+        String dateIssued = extractor.extractDateIssued();
+        assertTrue(dateIssued.isEmpty());
+    }
+
+    @Test
     public void whenEditionIsFoundResultShouldBeNotEmpty() {
         String edition = modsExtractor.extractEdition();
         assertTrue("Edition should not be empty", !edition.isEmpty());
+    }
+
+    @Test
+    public void whenEditionIsNotFoundResultShouldBeEmpty() {
+        ModsExtractor extractor = new ModsExtractor(new Mods());
+        String edition = extractor.extractEdition();
+        assertTrue(edition.isEmpty());
     }
 
     @Test
@@ -90,5 +119,4 @@ public class ModsExtractorTest {
         List<String> subjects = modsExtractor.extractSubjects();
         assertTrue("Subjects list should not be empty", !subjects.isEmpty());
     }
-
 }

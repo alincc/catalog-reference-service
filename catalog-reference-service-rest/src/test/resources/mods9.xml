@@ -1,0 +1,73 @@
+<mods xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.loc.gov/mods/v3"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:nbmodsext="http://www.nb.no/NBModsExtension/v1">
+    <titleInfo>
+        <title>[Tempolett moped-reklame]</title>
+    </titleInfo>
+    <name type="personal">
+        <namePart>Arnhoff, Roger</namePart>
+        <namePart type="date">1933-2003</namePart>
+        <role>
+            <roleTerm>Lyd</roleTerm>
+        </role>
+    </name>
+    <name type="corporate">
+        <namePart>Jonas Øglænd sykkelfabrikk</namePart>
+        <role>
+            <roleTerm>Oppdragsgiver</roleTerm>
+        </role>
+    </name>
+    <name type="personal">
+        <namePart>Mathiesen, Mattis</namePart>
+        <namePart type="date">1924-2010</namePart>
+        <role>
+            <roleTerm>Fotograf (levende bilder)</roleTerm>
+        </role>
+    </name>
+    <name type="corporate">
+        <namePart>Museum vest</namePart>
+        <role>
+            <roleTerm>Kontakt for rettighetshaver</roleTerm>
+        </role>
+    </name>
+    <name type="corporate">
+        <namePart>Nordisk films teknik</namePart>
+        <role>
+            <roleTerm>Lyd</roleTerm>
+        </role>
+    </name>
+    <name type="corporate">
+        <namePart>Norsk handelsmuseum og Norsk reklamemuseum</namePart>
+        <role>
+            <roleTerm>Rettighetshaver</roleTerm>
+        </role>
+    </name>
+    <name type="personal">
+        <namePart>Skauge, Arvid</namePart>
+        <namePart type="date">1929-</namePart>
+        <role>
+            <roleTerm>Regissør</roleTerm>
+            <roleTerm>Manus</roleTerm>
+            <roleTerm>Klipp</roleTerm>
+        </role>
+    </name>
+    <typeOfResource>moving image</typeOfResource>
+    <originInfo>
+        <publisher>Småfilm</publisher>
+        <dateCreated encoding="w3cdtf">1959-01-01</dateCreated>
+    </originInfo>
+    <language>
+        <languageTerm>Norsk</languageTerm>
+    </language>
+    <abstract>
+        Reklame for Tempolett moped fra Øglænd. Mann og kvinne på landevei med hver
+        sin Tempolett. Mannsstemme presenterer mopeden og dens fortrinn.
+    </abstract>
+    <note>
+        Katalogkort fra NHM: Arkivmusikk. Opplysninger om regissør m.m. er hentet fra
+        NHMs katalogkort. Prod.nr.: 12/59
+    </note>
+    <subject>
+        <topic>Mopeder</topic>
+    </subject>
+    <identifier type="urn">URN:NBN:no-nb_video_5882</identifier>
+</mods>

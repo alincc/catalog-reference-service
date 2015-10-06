@@ -41,13 +41,10 @@ public class ReferenceService implements IReferenceService {
             if ("film".equalsIgnoreCase(mediaType)) {
                 IReference reference = referenceFactory.createReference(ReferenceFactory.WIKIPEDIA_FILM, mods, urn);
                 return reference.createReference();
-            } else {
-                IReference reference = referenceFactory.createReference(ReferenceFactory.WIKIPEDIA_BOOK, mods , urn);
-                return reference.createReference();
             }
         }
-
-        return null;
+        IReference reference = referenceFactory.createReference(ReferenceFactory.WIKIPEDIA_BOOK, mods , urn);
+        return reference.createReference();
     }
 
     @Override

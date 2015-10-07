@@ -44,7 +44,7 @@ public class ReferenceServiceTest {
         Reference reference = referenceService.getWikipediaReference("41a7fb4e94aab9a88be23745a1504a92");
 
         assertNotNull(reference);
-        assertEquals("{{ Kilde bok | forfatter = Hagerup, Inger | utgivelsesår = [2014] | tittel = Så rart | utgivelsessted = [Mo i Rana] | forlag = Nordland teater | url = http://urn.nb.no/URN:NBN:no-nb_digibok_2014070158006 | side = }}",reference.generateReferenceString());
+        assertEquals("{{ Kilde bok | forfatter = Hagerup, Inger | utgivelsesår = [2014] | tittel = Så rart | isbn = 1234567890 | utgivelsessted = [Mo i Rana] | forlag = Nordland teater | url = http://urn.nb.no/URN:NBN:no-nb_digibok_2014070158006 | side = }}",reference.generateReferenceString());
 
     }
 

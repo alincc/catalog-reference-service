@@ -11,6 +11,10 @@ import java.util.stream.Collectors;
 
 public class ItemExtractor {
 
+    private ItemExtractor() {
+
+    }
+
     public static List<String> extractCreators(ItemResource item) {
         List<String> result = new ArrayList<>();
         if (item.getMetadata().getPeople() == null) {

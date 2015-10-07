@@ -11,7 +11,12 @@
     "people": [
       {
         "name": "Hagerup, Inger",
-        "date": "1905-1985"
+        "date": "1905-1985",
+        "roles": [
+          {
+            "name": "creator"
+          }
+        ]
       }
     ],
     "geographic": {
@@ -31,6 +36,9 @@
     "identifiers": {
       "urns": [
         "URN:NBN:no-nb_digibok_2014070158006"
+      ],
+      "isbn": [
+        "1234567890"
       ],
       "sesamId": "41a7fb4e94aab9a88be23745a1504a92"
     },

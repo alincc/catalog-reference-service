@@ -18,7 +18,6 @@ import java.io.OutputStream;
 
 @RestController
 public class ReferenceController {
-    private static final Logger LOG = LoggerFactory.getLogger(ReferenceController.class);
     private final IReferenceService referenceService;
 
     @Autowired

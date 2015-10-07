@@ -51,7 +51,7 @@ public class ItemExtractor {
             return false;
         }
         for (Role role : person.getRoles()) {
-            if (role.getName().equalsIgnoreCase("creator")) {
+            if ("creator".equalsIgnoreCase(role.getName())) {
                 return true;
             }
         }

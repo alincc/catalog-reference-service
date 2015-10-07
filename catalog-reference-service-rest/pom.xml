@@ -91,7 +91,7 @@
         <dependency>
             <groupId>no.nb.microservices.catalogitem</groupId>
             <artifactId>catalog-item-service-model</artifactId>
-            <version>0.0.1-103</version>
+            <version>0.0.1-104</version>
         </dependency>
 
 

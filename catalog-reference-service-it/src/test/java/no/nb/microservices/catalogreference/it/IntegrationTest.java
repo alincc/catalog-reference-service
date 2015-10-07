@@ -48,20 +48,17 @@ public class IntegrationTest {
 
     @Before
     public void setup() throws Exception {
-        String modsResponse = IOUtils.toString(getClass().getResourceAsStream("/mods.xml"));
-        String fieldsResponse = IOUtils.toString(getClass().getResourceAsStream("/fields.json"));
-        String itemResponse = IOUtils.toString(getClass().getResourceAsStream("/item.json"));
+        String item1 = IOUtils.toString(getClass().getResourceAsStream("/item1.json"));
+        String item2 = IOUtils.toString(getClass().getResourceAsStream("/item2.json"));
 
         mockWebServer = new MockWebServer();
         final Dispatcher dispatcher = new Dispatcher() {
             @Override
             public MockResponse dispatch(RecordedRequest recordedRequest) throws InterruptedException {
-                if (recordedRequest.getPath().equals("/catalog/metadata/508e84edfd13adc9a2b4275c16dea59a/mods")) {
-                    return new MockResponse().setBody(modsResponse).setResponseCode(200).setHeader("Content-Type", "application/xml; charset=utf-8");
-                } else if (recordedRequest.getPath().equals("/catalog/items/508e84edfd13adc9a2b4275c16dea59a")) {
-                    return new MockResponse().setBody(itemResponse).setResponseCode(200).setHeader("Content-Type", "application/hal+json; charset=utf-8");
-                } else if (recordedRequest.getPath().equals("/catalog/metadata/508e84edfd13adc9a2b4275c16dea59a/fields")) {
-                    return new MockResponse().setBody(fieldsResponse).setResponseCode(200).setHeader("Content-Type", "application/hal+json; charset=utf-8");
+                if (recordedRequest.getPath().equals("/catalog/items/41a7fb4e94aab9a88be23745a1504a92")) {
+                    return new MockResponse().setBody(item1).setResponseCode(200).setHeader("Content-Type", "application/hal+json; charset=utf-8");
+                } else if (recordedRequest.getPath().equals("/catalog/items/abcdef1234567890abcdef1234567890")) {
+                    return new MockResponse().setBody(item2).setResponseCode(200).setHeader("Content-Type", "application/hal+json; charset=utf-8");
                 }
                 return new MockResponse().setResponseCode(404);
             }
@@ -75,22 +72,29 @@ public class IntegrationTest {
     }
 
     @Test
-    public void testCreateWikiReference() {
-        ResponseEntity<String> entity = restTemplate.getForEntity("http://localhost:" + port + "/reference/508e84edfd13adc9a2b4275c16dea59a/wiki", String.class);
+    public void testCreateWikibookReference() {
+        ResponseEntity<String> entity = restTemplate.getForEntity("http://localhost:" + port + "/reference/41a7fb4e94aab9a88be23745a1504a92/wiki", String.class);
+        assertEquals(HttpStatus.OK, entity.getStatusCode());
+        assertNotNull(entity.getBody());
+    }
+
+    @Test
+    public void testCreateWikifilmReference() {
+        ResponseEntity<String> entity = restTemplate.getForEntity("http://localhost:" + port + "/reference/abcdef1234567890abcdef1234567890/wiki", String.class);
         assertEquals(HttpStatus.OK, entity.getStatusCode());
         assertNotNull(entity.getBody());
     }
 
     @Test
     public void testCreateRISReference() throws Exception {
-        URI uri = new URI("http://localhost:" + port + "/reference/508e84edfd13adc9a2b4275c16dea59a/ris");
+        URI uri = new URI("http://localhost:" + port + "/reference/41a7fb4e94aab9a88be23745a1504a92/ris");
         ResponseEntity<ByteArrayResource> entity = restTemplate.getForEntity(uri, ByteArrayResource.class);
         assertEquals(HttpStatus.OK, entity.getStatusCode());
     }
 
     @Test
     public void testCreateENWReference() throws Exception {
-        URI uri = new URI("http://localhost:" + port + "/reference/508e84edfd13adc9a2b4275c16dea59a/enw");
+        URI uri = new URI("http://localhost:" + port + "/reference/41a7fb4e94aab9a88be23745a1504a92/enw");
         ResponseEntity<ByteArrayResource> entity = restTemplate.getForEntity(uri, ByteArrayResource.class);
         assertEquals(HttpStatus.OK, entity.getStatusCode());
     }

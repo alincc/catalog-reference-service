@@ -1,10 +1,7 @@
 package no.nb.microservices.catalogreference.core.reference.service;
 
 import no.nb.microservices.catalogitem.rest.model.ItemResource;
-import no.nb.microservices.catalogmetadata.model.fields.FieldResource;
-import no.nb.microservices.catalogmetadata.model.mods.v3.Mods;
 import no.nb.microservices.catalogreference.core.item.repository.CatalogItemRepository;
-import no.nb.microservices.catalogreference.core.metadata.repository.CatalogMetadataRepository;
 import no.nb.microservices.catalogreference.core.reference.IReference;
 import no.nb.microservices.catalogreference.core.reference.ReferenceFactory;
 import no.nb.microservices.catalogreference.model.Reference;
@@ -15,48 +12,34 @@ import java.util.List;
 
 @Service
 public class ReferenceService implements IReferenceService {
-    private final CatalogMetadataRepository catalogMetadataRepository;
     private final CatalogItemRepository catalogItemRepository;
     private final ReferenceFactory referenceFactory;
 
     @Autowired
-    public ReferenceService(CatalogMetadataRepository catalogMetadataRepository, CatalogItemRepository catalogItemRepository, ReferenceFactory referenceFactory) {
-        this.catalogMetadataRepository = catalogMetadataRepository;
+    public ReferenceService(CatalogItemRepository catalogItemRepository, ReferenceFactory referenceFactory) {
         this.catalogItemRepository = catalogItemRepository;
         this.referenceFactory = referenceFactory;
     }
 
     @Override
     public Reference getWikipediaReference(String id) {
-        Mods mods = catalogMetadataRepository.getMods(id);
-        FieldResource fields = catalogMetadataRepository.getFields(id);
-        List<String> urns = fields.getUrns();
-        String urn = "";
-        if (!urns.isEmpty()) {
-            urn = urns.get(0);
-        }
         ItemResource item = catalogItemRepository.getItem(id);
         List<String> mediaTypes = item.getMetadata().getMediaTypes();
         for (String mediaType : mediaTypes) {
             if ("film".equalsIgnoreCase(mediaType)) {
-                IReference reference = referenceFactory.createReference(ReferenceFactory.WIKIPEDIA_FILM, mods, urn);
+                IReference reference = referenceFactory.createReference(ReferenceFactory.WIKIPEDIA_FILM, item);
                 return reference.createReference();
             }
         }
-        IReference reference = referenceFactory.createReference(ReferenceFactory.WIKIPEDIA_BOOK, mods , urn);
+        IReference reference = referenceFactory.createReference(ReferenceFactory.WIKIPEDIA_BOOK, item);
         return reference.createReference();
     }
 
     @Override
     public Reference getRISReference(String id) {
-        Mods mods = catalogMetadataRepository.getMods(id);
-        FieldResource fields = catalogMetadataRepository.getFields(id);
-        List<String> urns = fields.getUrns();
-        String urn = "";
-        if (!urns.isEmpty()) {
-            urn = urns.get(0);
-        }
-        IReference reference = referenceFactory.createReference(ReferenceFactory.RIS, mods, urn);
+        ItemResource item = catalogItemRepository.getItem(id);
+
+        IReference reference = referenceFactory.createReference(ReferenceFactory.RIS, item);
         return reference.createReference();
     }
 }

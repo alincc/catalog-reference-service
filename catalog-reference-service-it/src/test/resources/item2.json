@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "titleInfo": {
+      "title": "Last Action Hero"
+    },
+    "typeOfResource": "moving image",
+    "mediaTypes": [
+      "Film"
+    ],
+    "people": [
+      {
+        "name": "Kvæle, Alfrida",
+        "date": "1993-"
+      },
+      {
+        "name": "Kakestein, Ramona",
+        "date": "1992-"
+      }
+    ],
+    "geographic": {
+      "placeString": "Newton"
+    },
+    "originInfo": {
+      "publisher": "Team Newton",
+      "issued": "2015"
+    },
+    "identifiers": {
+      "urns": [
+        "URN:NBN:no-nb_1234"
+      ],
+      "sesamId": "abcdef1234567890abcdef1234567890"
+    },
+    "notes": [
+      "Best movie in town"
+    ],
+    "streamingInfo": {
+      "extent": 237
+    }
+  },
+  "accessInfo": {
+    "accessAllowedFrom": "EVERYWHERE",
+    "viewability": "ALL",
+    "isDigital": true,
+    "isPublicDomain": true
+  },
+  "id": "abcdef1234567890abcdef1234567890"
+}

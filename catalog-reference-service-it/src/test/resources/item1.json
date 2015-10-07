@@ -1,0 +1,51 @@
+{
+  "metadata": {
+    "compositeTitle": "Så rart : Inger Hagerup",
+    "titleInfo": {
+      "title": "Så rart"
+    },
+    "typeOfResource": "text",
+    "mediaTypes": [
+      "Bøker"
+    ],
+    "people": [
+      {
+        "name": "Hagerup, Inger",
+        "date": "1905-1985"
+      }
+    ],
+    "geographic": {
+      "placeString": "[Mo i Rana]"
+    },
+    "originInfo": {
+      "publisher": "Nordland teater",
+      "issued": "[2014]"
+    },
+    "recordInfo": {
+      "identifier": "142926132",
+      "identifierSource": "NO-TrBIB",
+      "created": "Fri Jan 01 00:00:00 CET 140704"
+    },
+    "classification": {
+    },
+    "identifiers": {
+      "urns": [
+        "URN:NBN:no-nb_digibok_2014070158006"
+      ],
+      "sesamId": "41a7fb4e94aab9a88be23745a1504a92"
+    },
+    "notes": [
+      "Teaterprogram",
+      "Urpremiere: 26. april 2014 Nordland teaters Black Box"
+    ],
+    "subject": {
+    }
+  },
+  "accessInfo": {
+    "accessAllowedFrom": "EVERYWHERE",
+    "viewability": "ALL",
+    "isDigital": true,
+    "isPublicDomain": true
+  },
+  "id": "41a7fb4e94aab9a88be23745a1504a92"
+}

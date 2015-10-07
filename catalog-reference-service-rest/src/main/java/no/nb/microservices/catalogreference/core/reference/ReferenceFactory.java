@@ -1,7 +1,6 @@
 package no.nb.microservices.catalogreference.core.reference;
 
 import no.nb.microservices.catalogitem.rest.model.ItemResource;
-import no.nb.microservices.catalogmetadata.model.mods.v3.Mods;
 import no.nb.microservices.catalogreference.config.ApplicationSettings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

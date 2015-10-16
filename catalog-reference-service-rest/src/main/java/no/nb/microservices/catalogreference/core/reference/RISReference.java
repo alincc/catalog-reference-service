@@ -26,7 +26,6 @@ public class RISReference implements IReference {
         ItemExtractor.extractNotes(item)
                 .forEach(note -> reference.addData("N1", note));
         reference.addData("IS", ItemExtractor.extractEdition(item));
-        reference.addData("SP", ItemExtractor.extractExtent(item));
         reference.addData("PB", ItemExtractor.extractPublisher(item));
         reference.addData("CY", ItemExtractor.extractPlace(item));
         ItemExtractor.extractIsbn(item)

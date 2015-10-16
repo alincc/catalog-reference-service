@@ -10,12 +10,10 @@ endpoints:
     enabled: true
 
 server:
-  port: 8080
+  port: 8101
 
 catalog-reference-service:
   urnbase: http://urn.nb.no/
-
-spring:  
 
 eureka:
   instance:
@@ -27,6 +25,9 @@ eureka:
 ---
 spring:
     profiles: docker
+
+server:
+  port: 8080
 
 eureka:
   instance:

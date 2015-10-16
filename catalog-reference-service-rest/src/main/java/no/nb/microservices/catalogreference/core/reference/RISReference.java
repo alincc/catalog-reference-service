@@ -3,6 +3,7 @@ package no.nb.microservices.catalogreference.core.reference;
 import no.nb.microservices.catalogitem.rest.model.ItemResource;
 import no.nb.microservices.catalogreference.model.RISReferenceString;
 import no.nb.microservices.catalogreference.model.Reference;
+import no.nb.microservices.catalogreference.model.ReferenceData;
 import no.nb.microservices.catalogreference.util.ItemExtractor;
 
 public class RISReference implements IReference {
@@ -18,7 +19,7 @@ public class RISReference implements IReference {
         reference.setReferenceString(new RISReferenceString());
 
         reference.addData("TY", ItemExtractor.extractTypeOfResource(item));
-        reference.addData("ID", item.getMetadata().getIdentifiers().getSesamId());
+        reference.addData("ID", item.getMetadata().getIdentifiers().getOaiId());
         reference.addData("T1", String.join(",", ItemExtractor.extractTitles(item)));
         reference.addData("A1", String.join(",", ItemExtractor.extractPersons(item)));
         reference.addData("Y1", ItemExtractor.extractDateIssued(item));
@@ -34,6 +35,7 @@ public class RISReference implements IReference {
                 .forEach(issn -> reference.addData("SN", issn));
         ItemExtractor.extractSubjects(item)
                 .forEach(subject -> reference.addData("KW", subject));
+        reference.getData().add(new ReferenceData("ER",""));
         return reference;
     }
 }

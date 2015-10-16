@@ -45,7 +45,7 @@ public class ReferenceControllerTest {
         Reference reference = new Reference();
         reference.setReferenceString(new RISReferenceString());
 
-        when(referenceService.getRISReference("41a7fb4e94aab9a88be23745a1504a92")).thenReturn(reference);
+        when(referenceService.getRisAndEnwReference("41a7fb4e94aab9a88be23745a1504a92")).thenReturn(reference);
 
         mockMvc.perform(get("/reference/41a7fb4e94aab9a88be23745a1504a92/ris")).andExpect(status().is2xxSuccessful());
     }
@@ -55,7 +55,7 @@ public class ReferenceControllerTest {
         Reference reference = new Reference();
         reference.setReferenceString(new RISReferenceString());
 
-        when(referenceService.getRISReference("41a7fb4e94aab9a88be23745a1504a92")).thenReturn(reference);
+        when(referenceService.getRisAndEnwReference("41a7fb4e94aab9a88be23745a1504a92")).thenReturn(reference);
 
         mockMvc.perform(get("/reference/41a7fb4e94aab9a88be23745a1504a92/enw")).andExpect(status().is2xxSuccessful());
     }

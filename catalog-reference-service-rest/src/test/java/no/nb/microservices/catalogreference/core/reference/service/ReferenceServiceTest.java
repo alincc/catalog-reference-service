@@ -65,7 +65,7 @@ public class ReferenceServiceTest {
         ItemResource item = mapper.readValue(new File(Paths.get(getClass().getResource("/item2.json").toURI()).toString()), ItemResource.class);
         when(catalogItemRepository.getItem("abcdef1234567890abcdef1234567890")).thenReturn(item);
 
-        Reference reference = referenceService.getRISReference("abcdef1234567890abcdef1234567890");
+        Reference reference = referenceService.getRisAndEnwReference("abcdef1234567890abcdef1234567890");
         assertNotNull(reference);
     }
 }

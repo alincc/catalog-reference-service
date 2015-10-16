@@ -178,8 +178,4 @@ public class ItemExtractor {
 
         return result;
     }
-
-    public static String extractExtent(ItemResource item) {
-        return "";
-    }
 }

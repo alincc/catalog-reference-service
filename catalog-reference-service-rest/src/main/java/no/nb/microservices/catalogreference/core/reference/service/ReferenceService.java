@@ -36,7 +36,7 @@ public class ReferenceService implements IReferenceService {
     }
 
     @Override
-    public Reference getRISReference(String id) {
+    public Reference getRisAndEnwReference(String id) {
         ItemResource item = catalogItemRepository.getItem(id);
 
         IReference reference = referenceFactory.createReference(ReferenceFactory.RIS, item);

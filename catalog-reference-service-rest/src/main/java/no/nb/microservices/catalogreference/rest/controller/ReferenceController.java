@@ -35,10 +35,7 @@ public class ReferenceController {
         response.setHeader("Content-Disposition", "attachment; filename=" + id + ".ris");
         OutputStream outputStream = response.getOutputStream();
 
-        Reference reference = referenceService.getRISReference(id);
-        String refString = reference.generateReferenceString();
-        outputStream.write(refString.getBytes());
-        outputStream.close();
+        streamRisAndEnwReference(id, outputStream);
     }
 
     @RequestMapping(value = "/reference/{id}/enw", method = RequestMethod.GET)
@@ -47,11 +44,14 @@ public class ReferenceController {
         response.setHeader("Content-Disposition", "attachment; filename=" + id + ".enw");
         OutputStream outputStream = response.getOutputStream();
 
-        Reference reference = referenceService.getRISReference(id);
+        streamRisAndEnwReference(id, outputStream);
+    }
+
+    private void streamRisAndEnwReference(@PathVariable("id") String id, OutputStream outputStream) throws IOException {
+        Reference reference = referenceService.getRisAndEnwReference(id);
         String refString = reference.generateReferenceString();
         outputStream.write(refString.getBytes());
         outputStream.close();
     }
-
 
 }

@@ -4,5 +4,5 @@ import no.nb.microservices.catalogreference.model.Reference;
 
 public interface IReferenceService {
     Reference getWikipediaReference(String id);
-    Reference getRISReference(String id);
+    Reference getRisAndEnwReference(String id);
 }

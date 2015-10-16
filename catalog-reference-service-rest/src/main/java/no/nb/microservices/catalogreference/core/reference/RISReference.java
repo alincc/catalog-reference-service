@@ -21,7 +21,8 @@ public class RISReference implements IReference {
         reference.addData("TY", ItemExtractor.extractTypeOfResource(item));
         reference.addData("ID", item.getMetadata().getIdentifiers().getOaiId());
         reference.addData("T1", String.join(",", ItemExtractor.extractTitles(item)));
-        reference.addData("A1", String.join(",", ItemExtractor.extractPersons(item)));
+        ItemExtractor.extractPersons(item)
+                .forEach(person -> reference.addData("A1", person));
         reference.addData("Y1", ItemExtractor.extractDateIssued(item));
         ItemExtractor.extractNotes(item)
                 .forEach(note -> reference.addData("N1", note));

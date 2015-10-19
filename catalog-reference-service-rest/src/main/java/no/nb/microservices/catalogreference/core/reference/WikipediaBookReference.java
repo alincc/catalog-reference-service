@@ -3,7 +3,6 @@ package no.nb.microservices.catalogreference.core.reference;
 import no.nb.microservices.catalogitem.rest.model.ItemResource;
 import no.nb.microservices.catalogreference.model.Reference;
 import no.nb.microservices.catalogreference.model.WikipediaBookReferenceString;
-import no.nb.microservices.catalogreference.util.DateUtils;
 import no.nb.microservices.catalogreference.util.ItemExtractor;
 
 import java.util.List;

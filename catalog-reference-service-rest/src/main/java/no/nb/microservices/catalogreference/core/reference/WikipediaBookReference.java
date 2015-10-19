@@ -3,6 +3,7 @@ package no.nb.microservices.catalogreference.core.reference;
 import no.nb.microservices.catalogitem.rest.model.ItemResource;
 import no.nb.microservices.catalogreference.model.Reference;
 import no.nb.microservices.catalogreference.model.WikipediaBookReferenceString;
+import no.nb.microservices.catalogreference.util.DateUtils;
 import no.nb.microservices.catalogreference.util.ItemExtractor;
 
 import java.util.List;
@@ -16,7 +17,6 @@ public class WikipediaBookReference implements IReference {
         this.url = url;
     }
 
-
     @Override
     public Reference createReference() {
         Reference reference = new Reference();
@@ -25,7 +25,7 @@ public class WikipediaBookReference implements IReference {
 
         List<String> creators = ItemExtractor.extractCreators(item);
         if (!creators.isEmpty()) {
-            reference.addData("forfatter", String.join(",",creators));
+            reference.addData("forfatter", String.join(",", creators));
         }
         reference.addData("utgivelsesår", ItemExtractor.extractDateIssued(item));
         List<String> titles = ItemExtractor.extractTitles(item);
@@ -39,9 +39,8 @@ public class WikipediaBookReference implements IReference {
         reference.addData("utgivelsessted", ItemExtractor.extractPlace(item));
         reference.addData("forlag", ItemExtractor.extractPublisher(item));
         if (item.getMetadata().getIdentifiers().getUrns() != null && !item.getMetadata().getIdentifiers().getUrns().isEmpty()) {
-            reference.addData("url",url + item.getMetadata().getIdentifiers().getUrns().get(0));
+            reference.addData("url", url + item.getMetadata().getIdentifiers().getUrns().get(0));
         }
-
 
         return reference;
     }

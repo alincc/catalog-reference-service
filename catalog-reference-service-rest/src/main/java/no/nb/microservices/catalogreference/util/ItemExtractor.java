@@ -62,7 +62,11 @@ public class ItemExtractor {
         if (item.getMetadata().getOriginInfo().getIssued() == null) {
             return "";
         }
-        return item.getMetadata().getOriginInfo().getIssued();
+        if (DateUtils.isValidDate(item.getMetadata().getOriginInfo().getIssued())) {
+            return item.getMetadata().getOriginInfo().getIssued();
+        } else {
+            return "";
+        }
     }
 
     public static String extractEdition(ItemResource item) {

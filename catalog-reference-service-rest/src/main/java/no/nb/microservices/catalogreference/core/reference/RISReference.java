@@ -4,6 +4,7 @@ import no.nb.microservices.catalogitem.rest.model.ItemResource;
 import no.nb.microservices.catalogreference.model.RISReferenceString;
 import no.nb.microservices.catalogreference.model.Reference;
 import no.nb.microservices.catalogreference.model.ReferenceData;
+import no.nb.microservices.catalogreference.util.DateUtils;
 import no.nb.microservices.catalogreference.util.ItemExtractor;
 
 public class RISReference implements IReference {
@@ -23,7 +24,7 @@ public class RISReference implements IReference {
         reference.addData("T1", String.join(",", ItemExtractor.extractTitles(item)));
         ItemExtractor.extractPersons(item)
                 .forEach(person -> reference.addData("A1", person));
-        reference.addData("Y1", ItemExtractor.extractDateIssued(item));
+        reference.addData("Y1", DateUtils.getRisAndEnwDate(ItemExtractor.extractDateIssued(item)));
         ItemExtractor.extractNotes(item)
                 .forEach(note -> reference.addData("N1", note));
         reference.addData("IS", ItemExtractor.extractEdition(item));

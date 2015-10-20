@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 
 @RestController
+@RequestMapping(value = "/catalog/reference")
 public class ReferenceController {
     private final IReferenceService referenceService;
 
@@ -23,13 +24,13 @@ public class ReferenceController {
         this.referenceService = referenceService;
     }
 
-    @RequestMapping(value = "/reference/{id}/wiki", method = RequestMethod.GET)
+    @RequestMapping(value = "/{id}/wiki", method = RequestMethod.GET)
     public ResponseEntity<String> createWikiReference(@PathVariable("id") String id) {
         Reference reference = referenceService.getWikipediaReference(id);
         return new ResponseEntity<String>(reference.generateReferenceString(), HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/reference/{id}/ris", method = RequestMethod.GET)
+    @RequestMapping(value = "/{id}/ris", method = RequestMethod.GET)
     public void createRISReference(@PathVariable("id") String id, HttpServletResponse response) throws IOException {
         response.setContentType("application/ris");
         response.setHeader("Content-Disposition", "attachment; filename=" + id + ".ris");
@@ -38,7 +39,7 @@ public class ReferenceController {
         streamRisAndEnwReference(id, outputStream);
     }
 
-    @RequestMapping(value = "/reference/{id}/enw", method = RequestMethod.GET)
+    @RequestMapping(value = "/{id}/enw", method = RequestMethod.GET)
     public void createENWReference(@PathVariable("id") String id, HttpServletResponse response) throws IOException {
         response.setContentType("application/enw");
         response.setHeader("Content-Disposition", "attachment; filename=" + id + ".enw");

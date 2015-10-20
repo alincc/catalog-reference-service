@@ -73,28 +73,28 @@ public class IntegrationTest {
 
     @Test
     public void testCreateWikibookReference() {
-        ResponseEntity<String> entity = restTemplate.getForEntity("http://localhost:" + port + "/reference/41a7fb4e94aab9a88be23745a1504a92/wiki", String.class);
+        ResponseEntity<String> entity = restTemplate.getForEntity("http://localhost:" + port + "/catalog/reference/41a7fb4e94aab9a88be23745a1504a92/wiki", String.class);
         assertEquals(HttpStatus.OK, entity.getStatusCode());
         assertNotNull(entity.getBody());
     }
 
     @Test
     public void testCreateWikifilmReference() {
-        ResponseEntity<String> entity = restTemplate.getForEntity("http://localhost:" + port + "/reference/abcdef1234567890abcdef1234567890/wiki", String.class);
+        ResponseEntity<String> entity = restTemplate.getForEntity("http://localhost:" + port + "/catalog//reference/abcdef1234567890abcdef1234567890/wiki", String.class);
         assertEquals(HttpStatus.OK, entity.getStatusCode());
         assertNotNull(entity.getBody());
     }
 
     @Test
     public void testCreateRISReference() throws Exception {
-        URI uri = new URI("http://localhost:" + port + "/reference/41a7fb4e94aab9a88be23745a1504a92/ris");
+        URI uri = new URI("http://localhost:" + port + "/catalog/reference/41a7fb4e94aab9a88be23745a1504a92/ris");
         ResponseEntity<ByteArrayResource> entity = restTemplate.getForEntity(uri, ByteArrayResource.class);
         assertEquals(HttpStatus.OK, entity.getStatusCode());
     }
 
     @Test
     public void testCreateENWReference() throws Exception {
-        URI uri = new URI("http://localhost:" + port + "/reference/41a7fb4e94aab9a88be23745a1504a92/enw");
+        URI uri = new URI("http://localhost:" + port + "/catalog/reference/41a7fb4e94aab9a88be23745a1504a92/enw");
         ResponseEntity<ByteArrayResource> entity = restTemplate.getForEntity(uri, ByteArrayResource.class);
         assertEquals(HttpStatus.OK, entity.getStatusCode());
     }

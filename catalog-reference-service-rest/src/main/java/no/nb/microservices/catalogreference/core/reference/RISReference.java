@@ -4,8 +4,8 @@ import no.nb.microservices.catalogitem.rest.model.ItemResource;
 import no.nb.microservices.catalogreference.model.RISReferenceString;
 import no.nb.microservices.catalogreference.model.Reference;
 import no.nb.microservices.catalogreference.model.ReferenceData;
-import no.nb.microservices.catalogreference.util.DateUtils;
 import no.nb.microservices.catalogreference.util.ItemExtractor;
+import org.apache.commons.validator.routines.DateValidator;
 
 public class RISReference implements IReference {
     private final ItemResource item;
@@ -24,7 +24,7 @@ public class RISReference implements IReference {
         reference.addData("T1", String.join(",", ItemExtractor.extractTitles(item)));
         ItemExtractor.extractPersons(item)
                 .forEach(person -> reference.addData("A1", person));
-        reference.addData("Y1", DateUtils.getRisAndEnwDate(ItemExtractor.extractDateIssued(item)));
+        reference.addData("Y1", formatDate(ItemExtractor.extractDateIssued(item)));
         ItemExtractor.extractNotes(item)
                 .forEach(note -> reference.addData("N1", note));
         reference.addData("IS", ItemExtractor.extractEdition(item));
@@ -38,5 +38,18 @@ public class RISReference implements IReference {
                 .forEach(subject -> reference.addData("KW", subject));
         reference.getData().add(new ReferenceData("ER",""));
         return reference;
+    }
+
+    private String formatDate(String date) {
+        DateValidator validator = DateValidator.getInstance();
+        String result = "";
+        if (validator.isValid(date,"yyyy")) {
+            result = date + "///";
+        } else if (validator.isValid(date,"yyyy-MM")) {
+            result = date.replaceAll("-","/") + "//";
+        } else if (validator.isValid(date,"yyyy-MM-dd")) {
+            result = date.replaceAll("-","/") + "/";
+        }
+        return result;
     }
 }

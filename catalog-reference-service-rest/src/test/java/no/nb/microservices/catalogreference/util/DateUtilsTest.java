@@ -2,39 +2,32 @@ package no.nb.microservices.catalogreference.util;
 
 import org.junit.Test;
 
-import static junit.framework.Assert.assertEquals;
+import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertTrue;
 
 public class DateUtilsTest {
 
     @Test
-    public void whenInvalidDateResultShouldBeEmpty() {
-        String result = DateUtils.getRisAndEnwDate("[1970]");
-        assertTrue("Result should be empty", result.isEmpty());
+    public void whenInvalidDateResultShouldBeFalse() {
+        boolean valid = DateUtils.isValidDate("[1970]");
+        assertEquals("Date should not be valid", false, valid);
     }
 
     @Test
-    public void whenDateIsValidResultShouldBeTrue() {
+    public void whenValidYearMonthDayResultShouldBeTrue() {
         boolean result = DateUtils.isValidDate("1970-01-01");
         assertTrue(result);
-
-        result = DateUtils.isValidDate("1970-01");
-        assertTrue(result);
-
-        result = DateUtils.isValidDate("1970");
-        assertTrue(result);
-
     }
 
     @Test
-    public void whenValidDateResultShouldBeFormattedCorrectly() {
-        String result = DateUtils.getRisAndEnwDate("1970");
-        assertEquals("1970///",result);
+    public void whenValidYearMonthResultShouldBeTrue() {
+        boolean result = DateUtils.isValidDate("1970-01");
+        assertTrue(result);
+    }
 
-        result = DateUtils.getRisAndEnwDate("1970-01-01");
-        assertEquals("1970/01/01/",result);
-
-        result = DateUtils.getRisAndEnwDate("1970-01");
-        assertEquals("1970/01//",result);
+    @Test
+    public void whenValidYearResultShouldBeTrue() {
+        boolean result = DateUtils.isValidDate("1970");
+        assertTrue(result);
     }
 }

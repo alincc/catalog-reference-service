@@ -1,9 +1,9 @@
 {
   "metadata": {
     "compositeTitle": "Så rart : Inger Hagerup",
-    "titleInfo": {
+    "titleInfos": [{
       "title": "Så rart"
-    },
+    }],
     "typeOfResource": "text",
     "mediaTypes": [
       "Bøker"
@@ -34,9 +34,7 @@
     "classification": {
     },
     "identifiers": {
-      "urns": [
-        "URN:NBN:no-nb_digibok_2014070158006"
-      ],
+      "urn": "URN:NBN:no-nb_digibok_2014070158006",
       "isbn13": [
         "1234567890"
       ],

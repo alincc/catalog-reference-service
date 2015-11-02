@@ -100,10 +100,12 @@ public class ItemExtractorTest {
     public void whenTitlesIsFoundResultShouldBeNotEmpty() {
         ItemResource item = new ItemResource();
         item.setMetadata(new Metadata());
-        item.getMetadata().setTitleInfo(new TitleInfo());;
-        item.getMetadata().getTitleInfo().setTitle("Tittel");
+        TitleInfo titleInfo = new TitleInfo();
+        titleInfo.setTitle("Tittel");
+        item.getMetadata().setTitleInfos(Arrays.asList(titleInfo));
 
         List<String> titles = ItemExtractor.extractTitles(item);
+        
         assertTrue("Titles should not be empty", !titles.isEmpty());
     }
 

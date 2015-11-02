@@ -37,8 +37,8 @@ public class WikipediaBookReference implements IReference {
         }
         reference.addData("utgivelsessted", ItemExtractor.extractPlace(item));
         reference.addData("forlag", ItemExtractor.extractPublisher(item));
-        if (item.getMetadata().getIdentifiers().getUrns() != null && !item.getMetadata().getIdentifiers().getUrns().isEmpty()) {
-            reference.addData("url", url + item.getMetadata().getIdentifiers().getUrns().get(0));
+        if (item.getMetadata().getIdentifiers().getUrn() != null && !item.getMetadata().getIdentifiers().getUrn().isEmpty()) {
+            reference.addData("url", url + item.getMetadata().getIdentifiers().getUrn());
         }
 
         return reference;

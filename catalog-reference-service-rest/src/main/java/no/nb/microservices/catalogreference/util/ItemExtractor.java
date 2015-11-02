@@ -78,11 +78,17 @@ public class ItemExtractor {
 
     public static List<String> extractTitles(ItemResource item) {
         List<String> result = new ArrayList<>();
-        if (item.getMetadata().getTitleInfo() == null) {
+        if (item.getMetadata().getTitleInfos() == null) {
             return result;
         }
-        result.add(item.getMetadata().getTitleInfo().getTitle());
+        List<String> titles = item.getMetadata().getTitleInfos().stream()
+            .filter(t -> t.getType() == null)
+            .map(t -> t.getTitle())
+            .collect(Collectors.toList());
 
+        if (!titles.isEmpty()) {
+            result.add(titles.get(0));
+        }
         return result;
     }
 

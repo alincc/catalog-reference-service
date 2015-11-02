@@ -74,12 +74,12 @@
         <dependency>
             <groupId>no.nb.microservices</groupId>
             <artifactId>catalog-metadata-model</artifactId>
-            <version>0.0.1-109</version>
+            <version>0.0.1-129</version>
         </dependency>
         <dependency>
             <groupId>no.nb.microservices.catalogitem</groupId>
             <artifactId>catalog-item-service-model</artifactId>
-            <version>0.0.1-110</version>
+            <version>0.0.1-133</version>
         </dependency>
         <dependency>
             <groupId>commons-validator</groupId>

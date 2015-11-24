@@ -37,7 +37,7 @@ public class ReferenceControllerTest {
         reference.setReferenceString(new WikipediaBookReferenceString());
         when(referenceService.getWikipediaReference("41a7fb4e94aab9a88be23745a1504a92")).thenReturn(reference);
 
-        mockMvc.perform(get("/catalog/reference/41a7fb4e94aab9a88be23745a1504a92/wiki")).andExpect(status().is2xxSuccessful());
+        mockMvc.perform(get("/v1/catalog/reference/41a7fb4e94aab9a88be23745a1504a92/wiki")).andExpect(status().is2xxSuccessful());
     }
 
     @Test
@@ -47,7 +47,7 @@ public class ReferenceControllerTest {
 
         when(referenceService.getRisAndEnwReference("41a7fb4e94aab9a88be23745a1504a92")).thenReturn(reference);
 
-        mockMvc.perform(get("/catalog/reference/41a7fb4e94aab9a88be23745a1504a92/ris")).andExpect(status().is2xxSuccessful());
+        mockMvc.perform(get("/v1/catalog/reference/41a7fb4e94aab9a88be23745a1504a92/ris")).andExpect(status().is2xxSuccessful());
     }
 
     @Test
@@ -57,6 +57,6 @@ public class ReferenceControllerTest {
 
         when(referenceService.getRisAndEnwReference("41a7fb4e94aab9a88be23745a1504a92")).thenReturn(reference);
 
-        mockMvc.perform(get("/catalog/reference/41a7fb4e94aab9a88be23745a1504a92/enw")).andExpect(status().is2xxSuccessful());
+        mockMvc.perform(get("/v1/catalog/reference/41a7fb4e94aab9a88be23745a1504a92/enw")).andExpect(status().is2xxSuccessful());
     }
 }

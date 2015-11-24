@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @FeignClient("catalog-item-service")
 public interface CatalogItemRepository {
-    @RequestMapping(value = "/catalog/items/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/v1/catalog/items/{id}", method = RequestMethod.GET)
     ItemResource getItem(@PathVariable("id") String id);
 }

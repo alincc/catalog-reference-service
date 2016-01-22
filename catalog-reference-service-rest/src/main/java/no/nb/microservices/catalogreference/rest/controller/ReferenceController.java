@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 
 @RestController
-@RequestMapping(value = "/v1/catalog/reference")
+@RequestMapping(value = "/catalog/v1/reference")
 public class ReferenceController {
     private final IReferenceService referenceService;
 

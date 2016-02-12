@@ -5,9 +5,6 @@
       "title": "Så rart"
     }],
     "typeOfResource": "text",
-    "mediaTypes": [
-      "Bøker"
-    ],
     "people": [
       {
         "name": "Hagerup, Inger",
@@ -47,6 +44,9 @@
     "subject": {
     }
   },
+  "mediatypes": [
+    "Bøker"
+  ],
   "accessInfo": {
     "accessAllowedFrom": "EVERYWHERE",
     "viewability": "ALL",

@@ -4,9 +4,6 @@
       "title": "Last Action Hero"
     },
     "typeOfResource": "moving image",
-    "mediaTypes": [
-      "Film"
-    ],
     "people": [
       {
         "name": "Kvæle, Alfrida",
@@ -33,10 +30,13 @@
     "notes": [
       "Best movie in town"
     ],
-    "streamingInfo": {
+    "streamingInfo": [{
       "extent": 237
-    }
+    }]
   },
+  "mediatypes": [
+    "Film"
+  ],
   "accessInfo": {
     "accessAllowedFrom": "EVERYWHERE",
     "viewability": "ALL",

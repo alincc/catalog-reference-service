@@ -24,7 +24,7 @@ public class ReferenceService implements IReferenceService {
     @Override
     public Reference getWikipediaReference(String id) {
         ItemResource item = catalogItemRepository.getItem(id);
-        List<String> mediaTypes = item.getMediatypes();
+        List<String> mediaTypes = item.getMetadata().getMediaTypes();
         for (String mediaType : mediaTypes) {
             if ("film".equalsIgnoreCase(mediaType)) {
                 IReference reference = referenceFactory.createReference(ReferenceFactory.WIKIPEDIA_FILM, item);

@@ -4,7 +4,7 @@ info:
     description: reference
 
 server:
-  port: 0
+  port: 8019
 
 catalog-reference-service:
   urnbase: http://urn.nb.no/

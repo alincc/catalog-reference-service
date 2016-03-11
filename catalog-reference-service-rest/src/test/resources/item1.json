@@ -42,11 +42,11 @@
       "Urpremiere: 26. april 2014 Nordland teaters Black Box"
     ],
     "subject": {
-    }
+    },
+    "mediaTypes": [
+      "Bøker"
+    ]
   },
-  "mediatypes": [
-    "Bøker"
-  ],
   "accessInfo": {
     "accessAllowedFrom": "EVERYWHERE",
     "viewability": "ALL",

@@ -30,11 +30,11 @@
     ],
     "streamingInfo": [{
       "extent": 237
-    }]
+    }],
+    "mediaTypes": [
+      "Film"
+    ]
   },
-  "mediatypes": [
-    "Film"
-  ],
   "accessInfo": {
     "accessAllowedFrom": "EVERYWHERE",
     "viewability": "ALL",
